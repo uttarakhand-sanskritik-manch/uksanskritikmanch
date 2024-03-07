@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>उत्तराखंड सांस्कृतिक मंच</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FF9933;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header img {
+      max-width: 100px;
+      height: auto;
+      vertical-align: middle;
+    }
+
+    header h1 {
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    nav {
+      background-color: #444;
+      text-align: left;
+      padding: 10px 0;
+    }
+
+    #gallery {
+      text-align: center;
+      padding: 10px;
+      background-color: #fff; /* Set the desired background color for the gallery */
+    }
+  
+    .gallery-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      max-width: 100%; /* Adjust the maximum width of the scrolling container */
+    }
+  
+    .gallery-row img,
+    .gallery-row video {
+      width: 450px;
+      height: 400px;
+      margin: 1px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .video-container {
+      text-align: center;
+    }
+  
+    .video-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .video-item {
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-item video {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    section {
+      padding: 15px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    /* Add this CSS style in the head or your external stylesheet */
+    .contact-members-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .contact-member {
+      width: 23%; /* Adjust the width as needed to leave space for margins */
+      margin-bottom: 20px; /* Add margin for spacing between members */
+      box-sizing: border-box;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .marquee {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: marquee 14s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo">
+    <h1>उत्तराखंड सांस्कृतिक मंच, बुराड़ी, दिल्ली</h1>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <div class="marquee">
+    <h2>उत्तराखंड सांस्कृतिक मंच पृष्ठ में आपका स्वागत है</h2>
+  </div>
+  
+  <section id="home" style="max-width: 800px; margin: 0; padding: 0;">
+    <!-- Functions content goes here -->
+  </section>
+  
+
+  <img src="first01.jpg" alt="Full Screen Image">
+
+  <section id="gallery">
+    <h2>Media Gallery</h2>
+    <div class="gallery-container">
+      <div class="gallery-row">
+        <img src="01.jpg" alt="Photo 2">
+        <img src="02.jpg" alt="Photo 3">
+        <video controls class="video-item">
+          <source src="1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img src="03.jpg" alt="Photo 4">
+        <video controls class="video-item">
+          <source src="2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img src="06.jpg" alt="Photo 7">
+        <img src="07.jpg" alt="Photo 8">
+        <video controls class="video-item">
+          <source src="3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img src="08.jpg" alt="Photo 9">
+        <img src="09.jpg" alt="Photo 10">
+        <img src="10.jpg" alt="Photo 11">
+        <video controls class="video-item">
+          <source src="4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img src="11.jpg" alt="Photo 12">
+        <img src="12.jpg" alt="Photo 13">
+        <img src="13.jpg" alt="Photo 14">
+        <img src="14.jpg" alt="Photo 15">
+        <video controls class="video-item">
+          <source src="5.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <b>uttarakhand sanskritik manch</b></br>Email: uksanskritikmanch@gmail.com</br></br>
+    <div class="contact-members-container">
+      <!-- Member 1 -->
+      <div class="contact-member">
+        <img src="member1.jpg" alt="Member 1">
+        <p>Email: member1@example.com</p>
+        <p>Phone: +1 123-456-7890</p>
+      </div>
+  
+      <!-- Member 2 -->
+      <div class="contact-member">
+        <img src="member2.jpg" alt="Member 2">
+        <p>Email: member2@example.com</p>
+        <p>Phone: +1 234-567-8901</p>
+      </div>
+  
+      <!-- Member 3 -->
+      <div class="contact-member">
+        <img src="member3.jpg" alt="Member 3">
+        <p>Email: member3@example.com</p>
+        <p>Phone: +1 345-678-9012</p>
+      </div>
+  
+      <!-- Member 4 -->
+      <div class="contact-member">
+        <img src="member4.jpg" alt="Member 4">
+        <p>Email: member4@example.com</p>
+        <p>Phone: +1 456-789-0123</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2024 उत्तराखंड सांस्कृतिक मंच. All rights reserved.
+  </footer>
+
+</body>
+</html>
