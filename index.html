@@ -1,270 +1,151 @@
-Certainly, let's improve the provided code and make it responsive for all screen sizes. Here's the enhanced version with explanations:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>उत्तराखंड सांस्कृतिक मंच</title>
+    <title>Helping Hands Organization</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #FF9933; /* Keep background color */
-            display: flex; /* Use flexbox for easier layout */
-            flex-direction: column;
-            min-height: 100vh; /* Make body fill viewport height */
+            background-color: #f9f9f9;
+            color: #333;
         }
-
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
             text-align: center;
-            padding: 1rem 0; /* Use rem for better responsiveness */
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
-
-        header img {
-            max-width: 100px;
-            height: auto;
-            margin-right: 1rem;
-        }
-
-        header h1 {
-            margin: 0; /* Remove default margin */
-        }
-
         nav {
-            background-color: #444;
-            text-align: center;
-            padding: 1rem 0;
             display: flex;
             justify-content: center;
-            gap: 1rem; /* Use gap for consistent spacing */
+            background-color: #333;
         }
-
         nav a {
-            color: #fff;
+            color: white;
+            padding: 1rem;
             text-decoration: none;
-            padding: 0.5rem 1rem; /* Adjust padding as needed */
-            border-radius: 5px; 
+            margin: 0 0.5rem;
         }
-
-        section {
-            padding: 1rem;
-            flex-grow: 1; /* Allow sections to grow to fill available space */
+        nav a:hover {
+            background-color: #575757;
+            border-radius: 4px;
         }
-
-        #gallery {
+        .hero {
             text-align: center;
-            background-color: #fff;
-            padding: 1rem;
+            padding: 2rem;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-image.jpg') no-repeat center center/cover;
+            color: white;
         }
-
-        .gallery-item {
-    display: inline-block;
-    margin: 10px; 
-    text-align: center; /* Center content within each item */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .gallery-item {
-        width: 45%; /* Adjust width for smaller screens */
-    }
-}
-
-        .gallery-container {
-            overflow-x: auto;
-            white-space: nowrap;
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
         }
-
-        .gallery-row img,
-        .gallery-row video {
-            width: 250px; /* Adjust image/video size for responsiveness */
-            height: auto;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .hero p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
         }
-
-        .video-container {
+        .section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section h2 {
             text-align: center;
+            margin-bottom: 1rem;
         }
-
-        .video-row {
+        .cards {
             display: flex;
             flex-wrap: wrap;
+            gap: 1rem;
             justify-content: center;
         }
-
-        .video-item {
-            margin: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 300px;
+            padding: 1rem;
+            text-align: center;
         }
-
-        .video-item video {
-            max-width: 100%;
-            border-radius: 10px;
+        .card img {
+            width: 100%;
+            border-radius: 8px;
         }
-
+        .card h3 {
+            margin: 1rem 0;
+        }
         footer {
             background-color: #333;
-            color: #fff;
+            color: white;
             text-align: center;
-            padding: 1rem 0;
-            position: relative; /* Use relative instead of fixed for better responsiveness */
-            bottom: 0;
+            padding: 1rem;
+            margin-top: 2rem;
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) { 
-            /* For smaller screens (tablets, phones) */
-            .gallery-row img,
-            .gallery-row video {
-                width: 180px; /* Reduce image/video size further */
-            }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
         }
-
-        /* Marquee styling */
-        .marquee {
-            white-space: nowrap;
-            overflow: hidden;
-            animation: marquee 14s linear infinite;
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Contact section styling */
-        .contact-members-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .contact-member {
-            flex: 0 0 48%; /* Adjust width for better responsiveness */
-            margin-bottom: 20px;
-        }
-
-        .contact-member img {
-            width: 100%;
-            height: auto;
-            object-fit: cover; /* Improve image scaling */
-        }
-
-        /* Full-screen image styling */
-        .full-screen-image {
-            width: 100%;
-            height: auto;
-            max-height: 400px; /* Limit height for responsiveness */
-            object-fit: cover;
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <img src="logo.png" alt="Logo">
-        <h1>उत्तराखंड सांस्कृतिक मंच, बुराड़ी, दिल्ली</h1>
+        <h1>Helping Hands Organization</h1>
+        <p>Together, we make a difference</p>
     </header>
-
+    
     <nav>
-        <a href="#home">Home</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Work</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <div class="marquee">
-        <h2>उत्तराखंड सांस्कृतिक मंच पृष्ठ में आपका स्वागत है</h2>
+    <div class="hero">
+        <h1>Empowering Communities</h1>
+        <p>Join us in our mission to uplift lives and create a better tomorrow.</p>
     </div>
 
-    <section id="home">
-        </section>
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>Helping Hands Organization is dedicated to improving the lives of underserved communities. We work tirelessly to provide resources, education, and support to those in need. With the help of volunteers and donors, we aim to create lasting change in society.</p>
+    </section>
 
-    <img src="first01.jpg" alt="Full Screen Image" class="full-screen-image"> 
-
-    <section id="gallery">
-    <h2>Media Gallery</h2>
-    <div class="gallery-container">
-        <div class="gallery-row">
-            <div class="gallery-item">
-                <img src="01.jpg" alt="Photo 2">
+    <section id="services" class="section">
+        <h2>Our Work</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="education.jpg" alt="Education Programs">
+                <h3>Education Programs</h3>
+                <p>Providing free education and learning materials to children in need.</p>
             </div>
-            <div class="gallery-item">
-                <img src="02.jpg" alt="Photo 3">
+            <div class="card">
+                <img src="healthcare.jpg" alt="Healthcare Services">
+                <h3>Healthcare Services</h3>
+                <p>Organizing free health camps and providing medical aid to the underserved.</p>
             </div>
-            <div class="gallery-item">
-                <video controls class="video-item">
-                    <source src="1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="gallery-item">
-                <img src="03.jpg" alt="Photo 4">
-            </div>
-            <div class="gallery-item">
-                <video controls class="video-item">
-                    <source src="2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="gallery-item">
-                <img src="06.jpg" alt="Photo 7">
-            </div>
-            <div class="gallery-item">
-                <img src="07.jpg" alt="Photo 8">
-            </div>
-            <div class="gallery-item">
-                <video controls class="video-item">
-                    <source src="3.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="gallery-item">
-                <img src="08.jpg" alt="Photo 9">
-            </div>
-            <div class="gallery-item">
-                <img src="09.jpg" alt="Photo 10">
-            </div>
-            <div class="gallery-item">
-                <img src="10.jpg" alt="Photo 11">
-            </div>
-            <div class="gallery-item">
-                <video controls class="video-item">
-                    <source src="4.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="gallery-item">
-                <img src="11.jpg" alt="Photo 12">
-            </div>
-            <div class="gallery-item">
-                <img src="12.jpg" alt="Photo 13">
-            </div>
-            <div class="gallery-item">
-                <img src="13.jpg" alt="Photo 14">
-            </div>
-            <div class="gallery-item">
-                <img src="14.jpg" alt="Photo 15">
-            </div>
-            <div class="gallery-item">
-                <video controls class="video-item">
-                    <source src="5.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="card">
+                <img src="community.jpg" alt="Community Development">
+                <h3>Community Development</h3>
+                <p>Empowering communities through skill training and sustainable projects.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>If you want to volunteer, donate, or learn more about our work, reach out to us:</p>
+        <p>Email: contact@helpinghands.org</p>
+        <p>Phone: +123 456 7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Helping Hands Organization | <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
