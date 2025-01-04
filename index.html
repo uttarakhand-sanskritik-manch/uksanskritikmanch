@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helping Hands Organization</title>
+    <title>Social Work Organization</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
             color: #333;
         }
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 1rem 2rem;
+            padding: 10px 20px;
             text-align: center;
         }
         nav {
@@ -25,127 +24,132 @@
         }
         nav a {
             color: white;
-            padding: 1rem;
+            padding: 14px 20px;
             text-decoration: none;
-            margin: 0 0.5rem;
+            text-align: center;
         }
         nav a:hover {
             background-color: #575757;
-            border-radius: 4px;
         }
         .hero {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-image.jpg') no-repeat center center/cover;
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
+            padding: 60px 20px;
+            text-align: center;
         }
         .hero h1 {
-            font-size: 3rem;
-            margin: 0;
+            font-size: 3em;
         }
         .hero p {
-            font-size: 1.2rem;
-            margin: 1rem 0;
+            font-size: 1.2em;
         }
         .section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .section h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-        .card {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 300px;
-            padding: 1rem;
+            padding: 20px;
             text-align: center;
         }
-        .card img {
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
             width: 100%;
             border-radius: 8px;
         }
-        .card h3 {
-            margin: 1rem 0;
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .team .member {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
         }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Helping Hands Organization</h1>
-        <p>Together, we make a difference</p>
+        <h1>Our Social Work Organization</h1>
+        <p>Making the world a better place, one step at a time</p>
     </header>
-    
+
     <nav>
         <a href="#about">About Us</a>
-        <a href="#services">Our Work</a>
+        <a href="#work">Our Work</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#team">Our Team</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <div class="hero">
-        <h1>Empowering Communities</h1>
-        <p>Join us in our mission to uplift lives and create a better tomorrow.</p>
-    </div>
+    <section class="hero">
+        <h1>Welcome to Our Organization</h1>
+        <p>We are dedicated to serving the community and spreading hope and positivity.</p>
+    </section>
 
     <section id="about" class="section">
         <h2>About Us</h2>
-        <p>Helping Hands Organization is dedicated to improving the lives of underserved communities. We work tirelessly to provide resources, education, and support to those in need. With the help of volunteers and donors, we aim to create lasting change in society.</p>
+        <p>We are a group of passionate individuals committed to social welfare and uplifting underprivileged communities through various initiatives.</p>
     </section>
 
-    <section id="services" class="section">
+    <section id="work" class="section">
         <h2>Our Work</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="education.jpg" alt="Education Programs">
-                <h3>Education Programs</h3>
-                <p>Providing free education and learning materials to children in need.</p>
+        <p>We focus on education, healthcare, and disaster relief, ensuring that our efforts bring meaningful changes to society.</p>
+    </section>
+
+    <section id="gallery" class="section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="work1.jpg" alt="Social work activity 1">
+            <img src="work2.jpg" alt="Social work activity 2">
+            <img src="work3.jpg" alt="Social work activity 3">
+            <img src="work4.jpg" alt="Social work activity 4">
+        </div>
+    </section>
+
+    <section id="team" class="section">
+        <h2>Our Team</h2>
+        <div class="team">
+            <div class="member">
+                <h3>John Doe</h3>
+                <p>President</p>
             </div>
-            <div class="card">
-                <img src="healthcare.jpg" alt="Healthcare Services">
-                <h3>Healthcare Services</h3>
-                <p>Organizing free health camps and providing medical aid to the underserved.</p>
+            <div class="member">
+                <h3>Jane Smith</h3>
+                <p>Vice President</p>
             </div>
-            <div class="card">
-                <img src="community.jpg" alt="Community Development">
-                <h3>Community Development</h3>
-                <p>Empowering communities through skill training and sustainable projects.</p>
+            <div class="member">
+                <h3>Emily Johnson</h3>
+                <p>Coordinator</p>
+            </div>
+            <div class="member">
+                <h3>Michael Brown</h3>
+                <p>Volunteer Lead</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section">
         <h2>Contact Us</h2>
-        <p>If you want to volunteer, donate, or learn more about our work, reach out to us:</p>
-        <p>Email: contact@helpinghands.org</p>
-        <p>Phone: +123 456 7890</p>
+        <p>Email: contact@socialwork.org</p>
+        <p>Phone: +123-456-7890</p>
+        <p>Address: 123 Community Lane, City, Country</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Helping Hands Organization | <a href="#">Privacy Policy</a></p>
+        <p>&copy; 2025 Social Work Organization. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
