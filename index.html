@@ -1,240 +1,195 @@
+Certainly, let's improve the provided code and make it responsive for all screen sizes. Here's the enhanced version with explanations:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>उत्तराखंड सांस्कृतिक मंच</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #FF9933;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>उत्तराखंड सांस्कृतिक मंच</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FF9933; /* Keep background color */
+            display: flex; /* Use flexbox for easier layout */
+            flex-direction: column;
+            min-height: 100vh; /* Make body fill viewport height */
+        }
 
-    header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0; /* Use rem for better responsiveness */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    header img {
-      max-width: 100px;
-      height: auto;
-      vertical-align: middle;
-    }
+        header img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 1rem;
+        }
 
-    header h1 {
-      display: inline-block;
-      margin-left: 10px;
-      vertical-align: middle;
-    }
+        header h1 {
+            margin: 0; /* Remove default margin */
+        }
 
-    nav {
-      background-color: #444;
-      text-align: left;
-      padding: 10px 0;
-    }
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem; /* Use gap for consistent spacing */
+        }
 
-    #gallery {
-      text-align: center;
-      padding: 10px;
-      background-color: #fff; /* Set the desired background color for the gallery */
-    }
-  
-    .gallery-container {
-      overflow-x: auto;
-      white-space: nowrap;
-      max-width: 100%; /* Adjust the maximum width of the scrolling container */
-    }
-  
-    .gallery-row img,
-    .gallery-row video {
-      width: 450px;
-      height: 400px;
-      margin: 1px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-  
-    .video-container {
-      text-align: center;
-    }
-  
-    .video-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  
-    .video-item {
-      margin: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem; /* Adjust padding as needed */
+            border-radius: 5px; 
+        }
 
-    .video-item video {
-      max-width: 100%;
-      border-radius: 10px;
-    }
+        section {
+            padding: 1rem;
+            flex-grow: 1; /* Allow sections to grow to fill available space */
+        }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 20px;
-      margin: 0 10px;
-      display: inline-block;
-    }
+        #gallery {
+            text-align: center;
+            background-color: #fff;
+            padding: 1rem;
+        }
 
-    section {
-      padding: 15px;
-    }
+        .gallery-container {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
 
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    /* Add this CSS style in the head or your external stylesheet */
-    .contact-members-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  
-    .contact-member {
-      width: 23%; /* Adjust the width as needed to leave space for margins */
-      margin-bottom: 20px; /* Add margin for spacing between members */
-      box-sizing: border-box;
-    }
-  
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
+        .gallery-row img,
+        .gallery-row video {
+            width: 250px; /* Adjust image/video size for responsiveness */
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .marquee {
-      white-space: nowrap;
-      overflow: hidden;
-      animation: marquee 14s linear infinite;
-    }
+        .video-container {
+            text-align: center;
+        }
 
-    @keyframes marquee {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-  </style>
+        .video-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .video-item {
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-item video {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative; /* Use relative instead of fixed for better responsiveness */
+            bottom: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) { 
+            /* For smaller screens (tablets, phones) */
+            .gallery-row img,
+            .gallery-row video {
+                width: 180px; /* Reduce image/video size further */
+            }
+        }
+
+        /* Marquee styling */
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: marquee 14s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Contact section styling */
+        .contact-members-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .contact-member {
+            flex: 0 0 48%; /* Adjust width for better responsiveness */
+            margin-bottom: 20px;
+        }
+
+        .contact-member img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Improve image scaling */
+        }
+
+        /* Full-screen image styling */
+        .full-screen-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px; /* Limit height for responsiveness */
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <img src="logo.png" alt="Logo">
-    <h1>उत्तराखंड सांस्कृतिक मंच, बुराड़ी, दिल्ली</h1>
-  </header>
+    <header>
+        <img src="logo.png" alt="Logo">
+        <h1>उत्तराखंड सांस्कृतिक मंच, बुराड़ी, दिल्ली</h1>
+    </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact Us</a>
-  </nav>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
 
-  <div class="marquee">
-    <h2>उत्तराखंड सांस्कृतिक मंच पृष्ठ में आपका स्वागत है</h2>
-  </div>
-  
-  <section id="home" style="max-width: 800px; margin: 0; padding: 0;">
-    <!-- Functions content goes here -->
-  </section>
-  
-
-  <img src="first01.jpg" alt="Full Screen Image">
-
-  <section id="gallery">
-    <h2>Media Gallery</h2>
-    <div class="gallery-container">
-      <div class="gallery-row">
-        <img src="01.jpg" alt="Photo 2">
-        <img src="02.jpg" alt="Photo 3">
-        <video controls class="video-item">
-          <source src="1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <img src="03.jpg" alt="Photo 4">
-        <video controls class="video-item">
-          <source src="2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <img src="06.jpg" alt="Photo 7">
-        <img src="07.jpg" alt="Photo 8">
-        <video controls class="video-item">
-          <source src="3.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <img src="08.jpg" alt="Photo 9">
-        <img src="09.jpg" alt="Photo 10">
-        <img src="10.jpg" alt="Photo 11">
-        <video controls class="video-item">
-          <source src="4.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <img src="11.jpg" alt="Photo 12">
-        <img src="12.jpg" alt="Photo 13">
-        <img src="13.jpg" alt="Photo 14">
-        <img src="14.jpg" alt="Photo 15">
-        <video controls class="video-item">
-          <source src="5.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+    <div class="marquee">
+        <h2>उत्तराखंड सांस्कृतिक मंच पृष्ठ में आपका स्वागत है</h2>
     </div>
-  </section>
-  
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <b>uttarakhand sanskritik manch</b></br>Email: uksanskritikmanch@gmail.com</br></br>
-    <div class="contact-members-container">
-      <!-- Member 1 -->
-      <div class="contact-member">
-        <img src="member1.jpg" alt="Member 1">
-        <p>Email: member1@example.com</p>
-        <p>Phone: +1 123-456-7890</p>
-      </div>
-  
-      <!-- Member 2 -->
-      <div class="contact-member">
-        <img src="member2.jpg" alt="Member 2">
-        <p>Email: member2@example.com</p>
-        <p>Phone: +1 234-567-8901</p>
-      </div>
-  
-      <!-- Member 3 -->
-      <div class="contact-member">
-        <img src="member3.jpg" alt="Member 3">
-        <p>Email: member3@example.com</p>
-        <p>Phone: +1 345-678-9012</p>
-      </div>
-  
-      <!-- Member 4 -->
-      <div class="contact-member">
-        <img src="member4.jpg" alt="Member 4">
-        <p>Email: member4@example.com</p>
-        <p>Phone: +1 456-789-0123</p>
-      </div>
-    </div>
-  </section>
 
-  <footer>
-    &copy; 2024 उत्तराखंड सांस्कृतिक मंच. All rights reserved.
-  </footer>
+    <section id="home">
+        </section>
 
-</body>
-</html>
+    <img src="first01.jpg" alt="Full Screen Image" class="full-screen-image"> 
+
+    <section id="gallery">
+        <h2>Media Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-row">
+                <img src="01.jpg" alt="Photo 2">
+                <img src="02.jpg" alt="Photo 3">
+                <video controls class="video-item">
+                    <source src="1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> 
+                </
